@@ -21,4 +21,4 @@ zerops:
       ports:
         - port: 3001
           httpSupport: true
-      start: node server/server.js
+      start: sudo -E node server/server.js
