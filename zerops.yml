@@ -6,7 +6,6 @@ zerops:
         - git clone https://github.com/louislam/uptime-kuma temp_dir && \mv temp_dir/* temp_dir/.[!.]* ./ || true && \rm -rf temp_dir
         - npm ci
         - npm run build
-        - npm run download-dist --production
       deployFiles:
         - ./
     run:
