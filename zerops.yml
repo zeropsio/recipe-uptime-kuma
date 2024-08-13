@@ -3,19 +3,22 @@ zerops:
     build:
       base: nodejs@20
       buildCommands:
-        - git clone https://github.com/louislam/uptime-kuma temp_dir && \mv temp_dir/* temp_dir/.[!.]* ./ || true && \rm -rf temp_dir
-        - npm ci
-        - npm run build
+        - |
+          git clone https://github.com/louislam/uptime-kuma
+          cd uptime-kuma
+          npm ci
+          npm run build
+          mv -f {.,}* ..
       deployFiles:
         - ./
     run:
       base: nodejs@20
       envVariables:
         UPTIME_KUMA_DB_TYPE: mariadb
-        UPTIME_KUMA_DB_HOSTNAME: db
+        UPTIME_KUMA_DB_HOSTNAME: ${db_hostname}
         UPTIME_KUMA_DB_PORT: ${db_port}
-        UPTIME_KUMA_DB_NAME: db
-        UPTIME_KUMA_DB_USERNAME: db
+        UPTIME_KUMA_DB_NAME: ${db_hostname}
+        UPTIME_KUMA_DB_USERNAME: ${db_hostname}
         UPTIME_KUMA_DB_PASSWORD: ${db_password}
       ports:
         - port: 3001
