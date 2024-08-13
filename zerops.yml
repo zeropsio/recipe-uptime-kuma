@@ -4,13 +4,11 @@ zerops:
       base: nodejs@20
       buildCommands:
         - |
-          git clone https://github.com/louislam/uptime-kuma
           cd uptime-kuma
           npm ci
           npm run build
-        - rm -rf .git && mv -f uptime-kuma/{.,}* .
       deployFiles:
-        - ./
+        - ./uptime-kuma/~
     run:
       base: nodejs@20
       envVariables:
