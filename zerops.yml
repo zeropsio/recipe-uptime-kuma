@@ -3,18 +3,20 @@ zerops:
     build:
       base: nodejs@20
       buildCommands:
-        - npm ci
-        - npm run build
+        - |
+          cd uptime-kuma
+          npm ci
+          npm run build
       deployFiles:
-        - ./uptime-kuma/~/
+        - ./uptime-kuma/~
     run:
       base: nodejs@20
       envVariables:
         UPTIME_KUMA_DB_TYPE: mariadb
-        UPTIME_KUMA_DB_HOSTNAME: db
+        UPTIME_KUMA_DB_HOSTNAME: ${db_hostname}
         UPTIME_KUMA_DB_PORT: ${db_port}
-        UPTIME_KUMA_DB_NAME: db
-        UPTIME_KUMA_DB_USERNAME: db
+        UPTIME_KUMA_DB_NAME: ${db_hostname}
+        UPTIME_KUMA_DB_USERNAME: ${db_hostname}
         UPTIME_KUMA_DB_PASSWORD: ${db_password}
       ports:
         - port: 3001

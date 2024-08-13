@@ -1,11 +1,12 @@
 project:
   name: uptime-kuma
+  
 services:
   - hostname: app
     type: nodejs@20
     buildFromGit: https://github.com/zeropsio/recipe-uptime-kuma
     enableSubdomainAccess: true
-
+    
   - hostname: db
     type: mariadb@10.6
     mode: NON_HA
