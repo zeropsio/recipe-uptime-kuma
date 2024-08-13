@@ -1,4 +1,4 @@
 [submodule "uptime-kuma"]
 	path = uptime-kuma
-	url = git@github.com:louislam/uptime-kuma.git
+	url = https://github.com/louislam/uptime-kuma.git
 	branch = master
