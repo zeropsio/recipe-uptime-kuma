@@ -1,9 +1,9 @@
-src
-test
-.github
-.devcontainer
-docker
-config
-extra
+./src
+./test
+./.github
+./.devcontainer
+./docker
+./config
+./extra
 
-!src/util.js
+!./src/util.js
