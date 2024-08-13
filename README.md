@@ -1,1 +1,2 @@
-# recipe-uptime-kuma
+# Zerops x Uptime Kuma
+
