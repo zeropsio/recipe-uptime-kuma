@@ -5,3 +5,5 @@ test
 docker
 config
 extra
+
+!src/util.js
