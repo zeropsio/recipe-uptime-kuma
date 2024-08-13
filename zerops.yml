@@ -8,7 +8,7 @@ zerops:
           cd uptime-kuma
           npm ci
           npm run build
-          mv -f {.,}* ..
+        - rm -rf .git && mv -f uptime-kuma/{.,}* .
       deployFiles:
         - ./
     run:
