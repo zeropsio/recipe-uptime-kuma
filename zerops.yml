@@ -1,5 +1,5 @@
 zerops:
-  - setup: uptime
+  - setup: app
     build:
       base: nodejs@18
       buildCommands:
