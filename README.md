@@ -1,2 +1,2 @@
-# Zerops x Uptime Kuma - Wip
+# Zerops x Uptime Kuma
 

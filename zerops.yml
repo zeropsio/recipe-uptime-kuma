@@ -11,6 +11,13 @@ zerops:
         - ./
     run:
       base: nodejs@18
+      envVariables:
+        UPTIME_KUMA_DB_TYPE: mariadb
+        UPTIME_KUMA_DB_HOSTNAME: db
+        UPTIME_KUMA_DB_PORT: ${db_port}
+        UPTIME_KUMA_DB_NAME: db
+        UPTIME_KUMA_DB_USERNAME: db
+        UPTIME_KUMA_DB_PASSWORD: ${db_password}
       ports:
         - port: 3001
           httpSupport: true
